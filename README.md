@@ -7,3 +7,6 @@ _printf() is a function that performs formatted output conversion and prints dat
 
 SPECIFIERS
 -----------------------------------------------------------------------------------------------------
+_____________________________
+Specifier  |Output           |
+_____________________________
