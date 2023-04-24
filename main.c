@@ -1,7 +1,8 @@
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
-
+#include "_printf.c"
+#include "functions.c"
 /**
  * main - Entry point
  *
