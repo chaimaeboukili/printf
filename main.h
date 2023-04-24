@@ -6,7 +6,9 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-
+#include "_putchar.c"
+#include "get_print_func.c"
+#include "handl_buf.c"
 /**
  * struct print - struct for printer functions
  * @type_arg: identifier
@@ -59,5 +61,6 @@ char *fill_oct_array(char *bnr, char *oct);
 char *fill_long_oct_array(char *bnr, char *oct);
 char *fill_short_oct_array(char *bnr, char *oct);
 char *fill_hex_array(char *bnr, char *hex, int isupp, int limit);
+unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
 
 #endif
