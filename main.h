@@ -6,7 +6,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-#include "_putchar.c"
+
 
 /**
  * struct format - Struct for format
@@ -30,12 +30,7 @@ int print_string(va_list args);
 int print_digit(va_list args);
 int print_mod(va_list args);
 int print_rev_string(va_list args);
-#include "get_function.c"
-#include "print_char.c"
-#include "print_string.c"
-#include "print_digit.c"
-#include "print_rev_string.c"
-#include "print_mod.c"
+
 
 
 #endif
