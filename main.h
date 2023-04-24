@@ -7,9 +7,7 @@
 #include <limits.h>
 #include <unistd.h>
 #include "_putchar.c"
-#include "get_print_func.c"
-#include "handl_buf.c"
-#include "print_buf.c"
+
 /**
  * struct print - struct for printer functions
  * @type_arg: identifier
@@ -23,6 +21,10 @@ typedef struct print
 	char *type_arg;
 	int (*f)(va_list, char *, unsigned int);
 } print_t;
+
+#include "get_print_func.c"
+#include "print_buf.c"
+#include "handl_buf.c"
 
 int _printf(const char *format, ...);
 int print_prg(va_list __attribute__((unused)), char *, unsigned int);
