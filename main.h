@@ -31,8 +31,6 @@ int print_digit(va_list args);
 int print_mod(va_list args);
 int print_rev_string(va_list args);
 #include "get_function.c"
-#include "print_buf.c"
-#include "handl_buf.c"
 #include "print_char.c"
 #include "print_string.c"
 #include "print_digit.c"
