@@ -12,19 +12,33 @@
 
 /**
  * struct format - match the conversion specifiers for printf
- * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
  * @f: type pointer to function for the conversion specifier
  *
  */
 
 typedef struct format
 {
-	char *id;
-	int (*f)();
-} convert_match;
+	char *format;
+	int (*f)(va_list list);
+} print;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
 int get_print_func(char identifier, va_list list);
-int _putchar(char c);
+int print_char(va_list list);
+int print_string(va_list list);
+int print_porcent(va_list list);
+int print_integer(va_list list);
+int print_base2(unsigned int n, int length);
+int print_binary(va_list list);
+int print_unsig(va_list list);
+int print_base8(unsigned int n, int length);
+int print_octal(va_list list);
+int print_base16min(unsigned int n, int length);
+int print_min_hexa(va_list list);
+int print_base16(unsigned int n, int length);
+int print_hexa(va_list list);
+int print_Rot13(va_list list);
+int print_rev(va_list list);
 
 #endif
