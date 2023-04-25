@@ -6,10 +6,8 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-
-
 /**
- * struct specifiers - Struct for format
+ * struct format - Struct for format
  * @specifiers: Struct format
  * @f: The function associated
  */
@@ -20,14 +18,20 @@ typedef struct specifiers
 	int (*f)(va_list);
 } specifiers_t;
 
-
+/*prototypes*/
 int _printf(const char *format, ...);
 int get_function(char s, va_list args);
 int _putchar(char c);
 
+/*Conversion specifiers*/
 int print_char(va_list args);
 int print_string(va_list args);
 int print_digit(va_list args);
 int print_mod(va_list args);
+int print_u(va_list args);
+int print_o(va_list args);
+int print_x(va_list args);
+int print_X(va_list args);
+int print_p(va_list args);
 
 #endif

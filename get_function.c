@@ -20,6 +20,11 @@ int get_function(char con_spec, va_list args)
 		{'%', print_mod},
 		{'d', print_digit},
 		{'i', print_digit},
+		{'u', print_u},
+		{'x', print_x},
+		{'X', print_X},
+		{'o', print_o},
+		{'p', print_p},
 		{0, NULL}
 	};
 
