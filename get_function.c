@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * get_function - function specifiers.
@@ -25,6 +26,8 @@ int get_function(char con_spec, va_list args)
 		{'X', print_X},
 		{'o', print_o},
 		{'p', print_p},
+		{'b', printf_bin},
+		{'R', printf_rot13},
 		{0, NULL}
 	};
 

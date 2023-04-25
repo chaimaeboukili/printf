@@ -33,5 +33,7 @@ int print_o(va_list args);
 int print_x(va_list args);
 int print_X(va_list args);
 int print_p(va_list args);
+int printf_bin(va_list val);
+int printf_rot13(va_list args);
 
 #endif
