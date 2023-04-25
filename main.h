@@ -9,7 +9,7 @@
 
 
 /**
- * struct format - Struct for format
+ * struct specifiers - Struct for format
  * @specifiers: Struct format
  * @f: The function associated
  */
