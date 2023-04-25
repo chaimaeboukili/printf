@@ -2,7 +2,7 @@
 
 /**
  * print_o - A function that prints an unsigned int in octal notation
- * @o: unsigned int to print
+ * @val: unsigned int to print
  * Return: number of printed digits
  */
 int print_o(va_list val)

@@ -26,4 +26,4 @@ int print_string(va_list args)
 		count_fun += _putchar(str[i]);
 
 	return (count_fun);
-} 
+}
