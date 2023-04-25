@@ -6,27 +6,41 @@
  * @u: unsigned int to print
  * Return: number of printed digits
  */
-int print_u(va_list u)
+int print_u(va_list args)
 {
-	unsigned int a[10];
-	unsigned int j = 1, m = 1000000000, n, sum = 0;
-	int counter = 0;
+	unsigned int n = va_arg(args, unsigned int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	n = va_arg(u, unsigned int);
-	a[0] = n / m;
-	for (; j < 10; j++)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
+		_putchar('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	for (j = 0; j < 10; j++)
+	if (num > 0)
 	{
-		sum += a[j];
-		if (sum || j == 9)
+		while (num / 10 != 0)
 		{
-			_putchar('0' + a[j]);
-			counter++;
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
 		}
 	}
-	return (counter);
+	_putchar(last + '0');
+
+	return (i);
 }

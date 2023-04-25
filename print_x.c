@@ -7,32 +7,33 @@
  * @x: char to print
  * Return: number of printed characters
  */
-int print_x(va_list x)
+int print_x(va_list val)
 {
-	unsigned int a[8];
-	unsigned int j = 1, m = 268435456, n, sum = 0;
-	char diff;
+	int i;
+	int *array;
 	int counter = 0;
+	unsigned int num = va_arg(val, unsigned int);
+	unsigned int temp = num;
 
-	n = va_arg(x, unsigned int);
-	diff = 'a' - ':';
-	a[0] = n / m;
-	for (; j < 8; j++)
+	while (num / 16 != 0)
 	{
-		m /= 16;
-		a[j] = (n / m) % 16;
+		num /= 16;
+		counter++;
 	}
-	for (j = 0; j < 8; j++)
+	counter++;
+	array = malloc(counter * sizeof(int));
+
+	for (i = 0; i < counter; i++)
 	{
-		sum += a[j];
-		if (sum || j == 7)
-		{
-			if (a[j] < 10)
-				_putchar('0' + a[j]);
-			else
-				_putchar('0' + diff + a[j]);
-			counter++;
-		}
+		array[i] = temp % 16;
+		temp /= 16;
 	}
+	for (i = counter - 1; i >= 0; i--)
+	{
+		if (array[i] > 9)
+			array[i] = array[i] + 39;
+		_putchar(array[i] + '0');
+	}
+	free(array);
 	return (counter);
 }

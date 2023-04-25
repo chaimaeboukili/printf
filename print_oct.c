@@ -5,27 +5,31 @@
  * @o: unsigned int to print
  * Return: number of printed digits
  */
-int print_o(va_list o)
+int print_o(va_list val)
 {
-	unsigned int a[11];
-	unsigned int j = 1, m = 1073741824, n, sum = 0;
-	int counter;
+	int i;
+	int *array;
+	int counter = 0;
+	unsigned int num = va_arg(val, unsigned int);
+	unsigned int temp = num;
 
-	n = va_arg(o, unsigned int);
-	a[0] = n / m;
-	for (; j < 11; j++)
+	while (num / 8 != 0)
 	{
-		m /= 8;
-		a[j] = (n / m) % 8;
+		num /= 8;
+		counter++;
 	}
-	for (j = 0; j < 11; j++)
+	counter++;
+	array = malloc(counter * sizeof(int));
+
+	for (i = 0; i < counter; i++)
 	{
-		sum += a[j];
-		if (sum || j == 10)
-		{
-			_putchar('0' + a[j]);
-			counter++;
-		}
+		array[i] = temp % 8;
+		temp /= 8;
 	}
+	for (i = counter - 1; i >= 0; i--)
+	{
+		_putchar(array[i] + '0');
+	}
+	free(array);
 	return (counter);
 }
