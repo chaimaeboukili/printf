@@ -40,5 +40,6 @@ int printf_hex_aux(unsigned long int num);
 int printf_HEX_aux(unsigned int num);
 int printf_exclusive_string(va_list val);
 int print_rev_string(va_list args);
+int _strlen(char *s);
 
 #endif
