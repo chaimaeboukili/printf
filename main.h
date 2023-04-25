@@ -35,11 +35,9 @@ int print_X(va_list val);
 int print_p(va_list args);
 int printf_bin(va_list val);
 int printf_rot13(va_list args);
-int printf_srev(va_list args);
 int printf_hex_aux(unsigned long int num);
 int printf_HEX_aux(unsigned int num);
 int printf_exclusive_string(va_list val);
 int print_rev_string(va_list args);
-int _strlen(char *s);
 
 #endif

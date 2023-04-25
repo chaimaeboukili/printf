@@ -12,38 +12,18 @@
 
 int print_string(va_list args)
 {
-	char *s;
-	int i, lenth;
+	int i;
+	int count_fun = 0;
+	char *str = va_arg(args, char *);
 
-	s = va_arg(args, char *);
-	if (s == NULL)
-	{
-		s = "(null)";
-		lenth = _strlen(s);
-		for (i = 0; i < lenth; i++)
-			_putchar(s[i]);
-		return (lenth);
-	}
-	else
-	{
-		lenth = _strlen(s);
-		for (i = 0; i < lenth; i++)
-			_putchar(s[i]);
-		return (lenth);
-	}
-}
+	if (!str)
+		str = "(null)";
 
-/**
- * _strlen - Returns the lenght of a string.
- * @s: Type char pointer
- * Return: c.
- */
-int _strlen(char *s)
-{
-	int c;
+	if (str[0] == '\0')
+		return (-1);
 
-	for (c = 0; s[c] != 0; c++)
-		;
-	return (c);
+	for (i = 0; str[i] != '\0'; i++)
+		count_fun += _putchar(str[i]);
 
-}
+	return (count_fun);
+} 
