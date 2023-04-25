@@ -6,7 +6,7 @@ _printf() is a variadic function that performs formatted output conversion and p
           int _printf(const char *format, ...)
 The format tags prototype is the following:
                                            %specifier
-                                           
+
 SPECIFIERS
 -----------------------------------------------------------------------------------------------------
 The conversion specifier is a single letter determining which argument type is expected and how it is formatted.
