@@ -30,7 +30,6 @@ int get_function(char con_spec, va_list args)
 		{'b', printf_bin},
 		{'R', printf_rot13},
 		{'S', printf_exclusive_string},
-		{'r', print_rev_string},
 		{0, NULL}
 	};
 
